@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+  <meta name="description" content="课程详情 — doyoudo">
+  <title>课程详情 — doyoudo</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-list">
+      <div class="logo">
+        <a href="index.html"><img src="assets/images/web-logo.png" alt="doyoudo"></a>
+        <span class="test">beta</span>
+      </div>
+      <li><a href="index.html">首页</a></li>
+        <li><a href="free-fonts.html">免费中文字体</a></li>
+        <li><a href="resources.html">资源导航</a></li>
+        <li><a href="learning-path.html">学习路径</a></li>
+    </div>
+  </nav>
+
+  <div class="detail-content">
+    <div class="home" style="padding:0 16px;">
+
+      <div class="breadcrumb">
+        <a href="index.html">首页</a>
+        <span class="sep">›</span>
+        <a href="tutorials.html">教程</a>
+        <span class="sep">›</span>
+        <span class="current">课程详情</span>
+      </div>
+
+      <div class="detail-layout">
+        <div>
+          <!-- 视频播放器 -->
+          <div class="video-wrapper">
+            <div class="video-bg"></div>
+            <div class="play-btn-center"><div class="play-circle"></div></div>
+            <div class="video-controls">
+              <i class="ri-play-fill" style="color:#fff;font-size:16px;"></i>
+              <div class="progress-bar"><div class="progress-filled"></div></div>
+              <span class="time">04:32 / 12:48</span>
+              <i class="ri-fullscreen-line" style="color:rgba(255,255,255,0.8);font-size:16px;"></i>
+            </div>
+          </div>
+
+          <div style="padding:20px 0;">
+            <h1 style="font-size:20px;font-weight:600;color:#2a301b;" id="detailTitle">课程加载中...</h1>
+            <div class="course-meta">
+              <span class="software" id="detailSoftware">PS</span>
+              <span class="level" id="detailDifficulty">初级</span>
+              <span style="color:#eb5f35;font-weight:600;" id="detailType">免费</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:12px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:#efeff0;display:flex;align-items:center;justify-content:center;font-size:12px;color:#80aa15;font-weight:600;">师</div>
+              <span style="font-size:14px;" id="detailAuthor">李涛</span>
+            </div>
+            <div style="display:flex;gap:20px;margin-top:12px;font-size:13px;color:#707070;flex-wrap:wrap;">
+              <span id="detailDuration">8小时</span>
+              <span id="detailLessons">48 课时</span>
+              <span id="detailViews">12.5万次观看</span>
+              <span id="detailRating">4.9 评分</span>
+            </div>
+            <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">
+              <button class="btn-all" style="width:auto;padding:10px 30px;margin:0;font-size:14px;">开始学习</button>
+              <button style="padding:10px 20px;border:1px solid #e4e4e4;border-radius:5px;font-size:14px;color:#707070;background:#fff;cursor:pointer;">❤️ 收藏</button>
+              <button style="padding:10px 20px;border:1px solid #e4e4e4;border-radius:5px;font-size:14px;color:#707070;background:#fff;cursor:pointer;">📤 分享</button>
+            </div>
+          </div>
+
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="intro">课程简介</button>
+            <button class="tab-btn" data-tab="chapters">课程目录</button>
+            <button class="tab-btn" data-tab="comments">学员评论</button>
+          </div>
+
+          <div class="tab-panel active" id="tab-intro">
+            <p style="font-size:14px;line-height:1.8;color:#4d4d4d;" id="detailDesc"></p>
+          </div>
+
+          <div class="tab-panel" id="tab-chapters">
+            <div class="chapter-list" id="chapterList"></div>
+          </div>
+
+          <div class="tab-panel" id="tab-comments">
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="padding:16px;background:#f9fafb;border-radius:6px;">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                  <div style="width:24px;height:24px;border-radius:50%;background:#efeff0;display:flex;align-items:center;justify-content:center;font-size:11px;color:#80aa15;">小</div>
+                  <span style="font-weight:600;font-size:13px;">小明同学</span>
+                  <span style="color:#f59e0b;">★★★★★</span>
+                  <span style="margin-left:auto;font-size:12px;color:#acacac;">3天前</span>
+                </div>
+                <p style="font-size:13px;color:#707070;">李涛老师讲得太好了！幽默又清晰，零基础跟着学了8节课就做出了第一张海报。强烈推荐！</p>
+              </div>
+              <div style="padding:16px;background:#f9fafb;border-radius:6px;">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                  <div style="width:24px;height:24px;border-radius:50%;background:#efeff0;display:flex;align-items:center;justify-content:center;font-size:11px;color:#477fe9;">设</div>
+                  <span style="font-weight:600;font-size:13px;">设计师小王</span>
+                  <span style="color:#f59e0b;">★★★★★</span>
+                  <span style="margin-left:auto;font-size:12px;color:#acacac;">1周前</span>
+                </div>
+                <p style="font-size:13px;color:#707070;">课程结构非常系统，知识点都有配套练习。系统课程效率比零散短视频高太多了。</p>
+              </div>
+              <div style="padding:16px;background:#f9fafb;border-radius:6px;">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                  <div style="width:24px;height:24px;border-radius:50%;background:#efeff0;display:flex;align-items:center;justify-content:center;font-size:11px;color:#10b981;">学</div>
+                  <span style="font-weight:600;font-size:13px;">学习爱好者</span>
+                  <span style="color:#f59e0b;">★★★★</span>
+                  <span style="margin-left:auto;font-size:12px;color:#acacac;">2周前</span>
+                </div>
+                <p style="font-size:13px;color:#707070;">内容很好，免费课程有这个质量真的很良心了！希望后面出更多高级案例。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="sidebar-card">
+            <h3 style="font-weight:600;font-size:15px;margin-bottom:14px;">课程信息</h3>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;">
+              <div style="display:flex;justify-content:space-between;"><span style="color:#acacac;">软件</span><span id="sidebarSoftware">PS</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:#acacac;">难度</span><span id="sidebarDifficulty">初级</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:#acacac;">课时</span><span id="sidebarLessons">48 课时</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:#acacac;">总时长</span><span id="sidebarDuration">8小时</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:#acacac;">观看次数</span><span id="sidebarViews">12.5万次</span></div>
+              <hr style="border-color:#f0f0f0;">
+              <div style="display:flex;justify-content:space-between;"><span style="color:#acacac;">价格</span><span style="font-weight:700;font-size:18px;" id="sidebarPrice">免费</span></div>
+            </div>
+            <button class="btn-all" style="width:100%;margin:16px 0 0 0;">立即学习</button>
+          </div>
+
+          <div class="sidebar-card" style="text-align:center;">
+            <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#a2c217,#9eb80c);display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;margin:0 auto 10px;font-weight:700;">师</div>
+            <h4 style="font-weight:600;font-size:14px;" id="sidebarAuthorName">李涛</h4>
+            <p style="font-size:12px;color:#acacac;margin:4px 0;">资深设计师 · 10年教学经验</p>
+            <p style="font-size:12px;color:#707070;">擅长PS/AI/平面设计，教学风格幽默风趣。</p>
+            <div style="display:flex;gap:12px;margin-top:10px;justify-content:center;font-size:12px;color:#acacac;">
+              <span>📚 5门课程</span><span>👥 28万学员</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div style="margin:40px 0 60px;">
+        <h2 style="font-size:18px;font-weight:600;color:#2a301b;margin-bottom:16px;padding:0 8px;">相关推荐</h2>
+        <div class="cards" id="relatedGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="left">
+        <div>
+          <img src="assets/images/web-logo.png" alt="doyoudo">
+          <br>
+          <span style="font-size:12px;color:#acacac;">有趣、专业的设计软件在线学习平台</span>
+        </div>
+      </div>
+      <div class="right">
+        <a href="tutorials.html">全部教程</a>
+        <a href="learning-path.html">学习路径</a>
+        <a href="#">资源导航</a>
+        <a href="#">问答社区</a>
+        <a href="#">关于我们</a>
+        <a href="#">京ICP备15058894号-1</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/tutorials.js"></script>
+  <script src="js/detail.js"></script>
+  <script src="js/paths.js"></script>
+  <script src="js/home.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      initNav();
+      initFooter();
+      initSearch();
+      initFilters();
+      initDetail();
+      initPaths();
+      initHome();
+    });
+  </script>
+</body>
+</html>

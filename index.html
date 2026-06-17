@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+  <meta name="description" content="doyoudo - 有趣、专业的设计软件在线学习平台">
+  <title>doyoudo</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- 导航栏 — 仅 Logo + beta + 链接，无搜索/登录/汉堡 -->
+  <nav class="nav">
+    <div class="nav-list">
+      <div class="logo">
+        <a href="index.html"><img src="assets/images/web-logo.png" alt="doyoudo"></a>
+        <span class="test">beta</span>
+      </div>
+      <li><a href="index.html" class="router-link-active">首页</a></li>
+      <li><a href="free-fonts.html">免费中文字体</a></li>
+      <li><a href="resources.html">资源导航</a></li>
+      <li><a href="learning-path.html">学习路径</a></li>
+    </div>
+  </nav>
+
+  <!-- 主内容 -->
+  <div class="home-content">
+    <div class="home">
+
+      <!-- Banner 区 -->
+      <div class="banner-area">
+        <div class="big-banner">
+          <img src="assets/images/banner.jpg" alt="doyoudo">
+        </div>
+        <div class="small-banner" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#477fe9,#6b79fe);text-align:center;color:#fff;padding:20px;">
+          <div>
+            <div style="font-size:24px;font-weight:700;">🍦 doyoudo</div>
+            <div style="font-size:14px;opacity:0.9;margin-top:8px;">有趣、专业的设计软件<br>在线学习平台</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 搜索区 -->
+      <div class="searchPart">
+        <span class="search-what">找什么教程？</span>
+        <div class="search-box">
+          <input type="text" placeholder="搜索课程、软件、作者...">
+          <button class="cancelSearch"><i class="ri-close-circle-line"></i></button>
+        </div>
+        <a href="tutorials.html"><button class="btn-all">全部课程</button></a>
+        <a href="tutorials.html?type=paid"><button class="btn-buy">付费课程</button></a>
+      </div>
+
+      <!-- 筛选区 -->
+      <div class="search-filters">
+        <div class="search-software">
+          <p>软件</p>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-fgroup="software" data-fvalue="all">全部</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="ps">PS</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="ae">AE</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="pr">PR</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="c4d">C4D</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="ai">AI</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="au">AU</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="fl">FL</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="lr">LR</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="fcp">FCP</button>
+          </div>
+        </div>
+        <div class="search-level">
+          <p>难度</p>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-fgroup="difficulty" data-fvalue="all">全部</button>
+            <button class="filter-btn" data-fgroup="difficulty" data-fvalue="beginner">初级</button>
+            <button class="filter-btn" data-fgroup="difficulty" data-fvalue="intermediate">中级</button>
+            <button class="filter-btn" data-fgroup="difficulty" data-fvalue="advanced">高级</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课程卡片 -->
+      <div class="cards"></div>
+      <p class="noMore">— 只展示部分热门课程，<a href="tutorials.html" style="color:#80aa15;">查看全部 →</a> —</p>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="left">
+        <div>
+          <img src="assets/images/web-logo.png" alt="doyoudo">
+          <br>
+          <span style="font-size:12px;color:#acacac;">有趣、专业的设计软件在线学习平台</span>
+        </div>
+      </div>
+      <div class="right">
+        <a href="tutorials.html">全部教程</a>
+        <a href="learning-path.html">学习路径</a>
+        <a href="#">资源导航</a>
+        <a href="#">问答社区</a>
+        <a href="#">关于我们</a>
+        <a href="#">京ICP备15058894号-1</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/tutorials.js"></script>
+  <script src="js/detail.js"></script>
+  <script src="js/paths.js"></script>
+  <script src="js/home.js"></script>
+  <script>
+    // ---------- 启动 ----------
+    document.addEventListener('DOMContentLoaded', function() {
+      initNav();
+      initFooter();
+      initSearch();
+      initFilters();
+      initDetail();
+      initPaths();
+      initHome();
+    });
+  </script>
+</body>
+</html>

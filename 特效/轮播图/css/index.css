@@ -1,0 +1,63 @@
+*{
+	margin:0; 
+	padding:0; 
+	border:0; 
+	list-style:none;}
+ /*banner*/
+ .banner{
+ 	width:1000px;
+ 	height:285px;
+ 	margin:15px auto;
+ 	position:relative;
+ 	overflow: hidden;  /* 清除浮动影响 */
+ }
+ .banner .banner_pic .pic{display:none;}  /* 设置元素隐藏 */
+ .banner .banner_pic .current{display:block;}
+ .banner ol{
+ 	position:absolute;
+ 	left:50%;
+ 	bottom:6%;
+ }
+ .banner ol .current{
+ 	background:#2fafbc;
+ 	float:left;
+ 	width:10px;
+ 	height:10px;
+ 	border:1px solid #2fafbc;
+ 	border-radius:50%;
+ 	margin-right:12px;
+ }
+ .banner ol .but{
+ 	float:left;
+ 	width:10px;
+ 	height:10px;
+ 	border:1px solid #2fafbc;
+	border-radius:50%;
+ 	margin-right:12px;
+ 	background:#fff;
+	opacity:0.5;
+ }
+ .banner ol li{cursor:pointer;}
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+  <meta name="description" content="doyoudo 资源导航 - 设计师必备网站、工具、素材资源大全">
+  <title>资源导航 — doyoudo</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .res-category { margin-bottom: 36px; }
+    .res-category h2 { font-size: 18px; font-weight: 600; color: #2a301b; margin-bottom: 16px; padding-left: 10px; border-left: 3px solid #a2c217; }
+    .res-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .res-item { background: #fff; border-radius: 5px; padding: 16px; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.01), 0 4px 8px 0 rgba(0,0,0,0.05); transition: all 0.2s; cursor: pointer; display: block; text-decoration: none; }
+    .res-item:hover { box-shadow: 0 8px 24px 0 rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .res-item h4 { font-size: 14px; font-weight: 600; color: #2a301b; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+    .res-item h4 .ri-external-link-line { font-size: 12px; color: #acacac; opacity: 0; transition: opacity 0.15s; }
+    .res-item:hover h4 .ri-external-link-line { opacity: 1; color: #a2c217; }
+    .res-item p { font-size: 12px; color: #acacac; line-height: 1.4; }
+    .res-item .res-tag { display: inline-block; padding: 1px 6px; font-size: 11px; border-radius: 3px; background: #f5faf5; color: #80aa15; margin-top: 6px; }
+    .res-item .res-tag.paid { background: #fff7fa; color: #eb5f35; }
+    .res-item .res-tag.partial { background: #fff8f0; color: #e6a23c; }
+    .res-search { max-width: 400px; margin: 0 auto 30px; }
+    @media (max-width: 1024px) { .res-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 470px) { .res-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-list">
+      <div class="logo">
+        <a href="index.html"><img src="assets/images/web-logo.png" alt="doyoudo"></a>
+        <span class="test">beta</span>
+      </div>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="free-fonts.html">免费中文字体</a></li>
+      <li><a href="resources.html" class="router-link-active">资源导航</a></li>
+      <li><a href="learning-path.html">学习路径</a></li>
+    </div>
+  </nav>
+
+  <div class="home-content">
+    <div class="home" style="padding:40px 0 60px;">
+
+      <div style="text-align:center;padding:20px 0 10px;">
+        <h1 style="font-size:24px;font-weight:700;color:#2a301b;"><i class="ri-compass-3-line" style="color:#a2c217;"></i> 资源导航</h1>
+        <p style="font-size:14px;color:#707070;margin-top:8px;">设计师必备的网站、工具与素材资源大全</p>
+      </div>
+
+      <!-- 搜索 -->
+      <div class="res-search">
+        <div class="search-box" style="width:100%;min-width:auto;">
+          <input type="text" id="resourceSearch" placeholder="搜索资源名称...">
+          <button class="cancelSearch" id="clearResourceSearch"><i class="ri-close-circle-line"></i></button>
+        </div>
+      </div>
+
+      <div id="resourceContent"></div>
+
+      <p class="noMore">— 资源持续更新中 —</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="left">
+        <div>
+          <img src="assets/images/web-logo.png" alt="doyoudo">
+          <br>
+          <span style="font-size:12px;color:#acacac;">有趣、专业的设计软件在线学习平台</span>
+        </div>
+      </div>
+      <div class="right">
+        <a href="tutorials.html">全部教程</a>
+        <a href="learning-path.html">学习路径</a>
+        <a href="free-fonts.html">免费中文字体</a>
+        <a href="resources.html">资源导航</a>
+        <a href="#">关于我们</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var categories = [
+      { title:'🔤 字体资源', items:[
+        { name:'Google Fonts', desc:'开源字体免费使用，在线预览', url:'https://fonts.google.com', tag:'免费开源', tagCls:'' },
+        { name:'字体天下', desc:'中文字体下载站', url:'https://www.fonts.net.cn', tag:'部分免费', tagCls:'partial' },
+        { name:'字由', desc:'设计师字体管理工具', url:'https://www.hellofont.cn', tag:'推荐', tagCls:'' },
+        { name:'doyoudo 免费字体', desc:'精选免费可商用中文字体', url:'free-fonts.html', tag:'内部', tagCls:'' },
+        { name:'猫啃网', desc:'免费商用字体下载', url:'https://www.maoken.com', tag:'免费', tagCls:'' },
+      ]},
+      { title:'🖼 图片素材', items:[
+        { name:'Unsplash', desc:'高质量免费摄影图片', url:'https://unsplash.com', tag:'免费', tagCls:'' },
+        { name:'Pexels', desc:'免费素材图片与视频', url:'https://www.pexels.com', tag:'免费', tagCls:'' },
+        { name:'Pixabay', desc:'海量免费图片、插画、视频', url:'https://pixabay.com', tag:'免费', tagCls:'' },
+        { name:'花瓣网', desc:'国内设计师灵感采集平台', url:'https://huaban.com', tag:'推荐', tagCls:'' },
+        { name:'站酷', desc:'设计师作品展示与交流社区', url:'https://www.zcool.com.cn', tag:'推荐', tagCls:'' },
+      ]},
+      { title:'🎯 图标资源', items:[
+        { name:'Remix Icon', desc:'开源中性风格图标库（本站使用）', url:'https://remixicon.com', tag:'免费开源', tagCls:'' },
+        { name:'Iconfont', desc:'阿里巴巴矢量图标库', url:'https://www.iconfont.cn', tag:'免费', tagCls:'' },
+        { name:'Flaticon', desc:'海量扁平化图标资源', url:'https://www.flaticon.com', tag:'部分免费', tagCls:'partial' },
+        { name:'Feather Icons', desc:'极简开源图标集合', url:'https://feathericons.com', tag:'免费开源', tagCls:'' },
+        { name:'IconPark', desc:'字节跳动开源图标库', url:'https://iconpark.oceanengine.com', tag:'免费开源', tagCls:'' },
+      ]},
+      { title:'🎨 配色工具', items:[
+        { name:'Coolors', desc:'在线配色方案生成器', url:'https://coolors.co', tag:'免费', tagCls:'' },
+        { name:'Adobe Color', desc:'Adobe官方配色轮盘工具', url:'https://color.adobe.com', tag:'免费', tagCls:'' },
+        { name:'中国色', desc:'中国传统颜色参考', url:'https://colors.saintic.com', tag:'推荐', tagCls:'' },
+        { name:'Palette Generator', desc:'上传图片自动提取配色', url:'https://palettegenerator.com', tag:'免费', tagCls:'' },
+      ]},
+      { title:'🛠 设计工具', items:[
+        { name:'Figma', desc:'在线协作UI设计工具', url:'https://www.figma.com', tag:'免费额度', tagCls:'partial' },
+        { name:'Canva', desc:'在线平面设计平台', url:'https://www.canva.cn', tag:'免费', tagCls:'' },
+        { name:'Remove.bg', desc:'AI一键去除图片背景', url:'https://www.remove.bg', tag:'免费', tagCls:'' },
+        { name:'TinyPNG', desc:'PNG/JPEG智能图片压缩', url:'https://tinypng.com', tag:'免费', tagCls:'' },
+        { name:'Optimizilla', desc:'批量图片压缩优化', url:'https://imagecompressor.com', tag:'免费', tagCls:'' },
+      ]},
+      { title:'📱 Mockup/样机', items:[
+        { name:'Mockup World', desc:'免费产品样机PSD资源', url:'https://www.mockupworld.co', tag:'免费', tagCls:'' },
+        { name:'Placeit', desc:'在线样机模板生成', url:'https://placeit.net', tag:'部分免费', tagCls:'partial' },
+        { name:'Freepik', desc:'矢量素材与样机模板', url:'https://www.freepik.com', tag:'部分免费', tagCls:'partial' },
+        { name:'Smartmockups', desc:'高质量产品展示样机', url:'https://smartmockups.com', tag:'部分免费', tagCls:'partial' },
+      ]},
+      { title:'⚡ 效率工具', items:[
+        { name:'Eagle', desc:'设计师素材管理工具', url:'https://cn.eagle.cool', tag:'付费', tagCls:'paid' },
+        { name:'Billfish', desc:'免费素材管理替代方案', url:'https://www.billfish.cn', tag:'免费', tagCls:'' },
+        { name:'Snipaste', desc:'截图+贴图效率神器', url:'https://www.snipaste.com', tag:'免费', tagCls:'' },
+        { name:'uTools', desc:'程序员/设计师效率工具箱', url:'https://u.tools', tag:'免费', tagCls:'' },
+      ]},
+      { title:'📚 学习平台', items:[
+        { name:'doyoudo', desc:'创意设计软件在线学习', url:'index.html', tag:'内部', tagCls:'' },
+        { name:'优设网', desc:'设计师综合学习社区', url:'https://www.uisdc.com', tag:'推荐', tagCls:'' },
+        { name:'B站设计区', desc:'海量免费设计教程视频', url:'https://www.bilibili.com/v/douga/mad', tag:'免费', tagCls:'' },
+        { name:'Youtube Design', desc:'国际设计教程资源', url:'https://www.youtube.com', tag:'免费', tagCls:'' },
+      ]},
+    ];
+
+    var container = document.getElementById('resourceContent');
+
+    function renderAll(items) {
+      if (!items || items.length === 0) {
+        container.innerHTML = '<div class="notFound" style="width:100%;">没有匹配的资源，试试其他关键词</div>';
+        return;
+      }
+      container.innerHTML = items.map(function(cat) {
+        return '<div class="res-category">' +
+          '<h2>' + cat.title + ' <span style="font-weight:400;font-size:13px;color:#acacac;">· ' + cat.items.length + '个</span></h2>' +
+          '<div class="res-grid">' +
+            cat.items.map(function(item) {
+              var isExternal = item.url.startsWith('http');
+              return '<a class="res-item" href="' + item.url + '" ' + (isExternal ? 'target="_blank" rel="noopener"' : '') + '>' +
+                '<h4>' + item.name + ' <i class="ri-' + (isExternal ? 'external-link-line' : 'arrow-right-line') + '"></i></h4>' +
+                '<p>' + item.desc + '</p>' +
+                '<span class="res-tag ' + (item.tagCls || '') + '">' + item.tag + '</span>' +
+              '</a>';
+            }).join('') +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    renderAll(categories);
+
+    // 搜索功能
+    var searchInput = document.getElementById('resourceSearch');
+    var clearBtn = document.getElementById('clearResourceSearch');
+
+    searchInput.addEventListener('input', function() {
+      var query = this.value.trim().toLowerCase();
+      if (!query) { renderAll(categories); return; }
+
+      // 过滤每个分类，保留有匹配项的分类
+      var filtered = categories.map(function(cat) {
+        var matchedItems = cat.items.filter(function(item) {
+          return item.name.toLowerCase().indexOf(query) !== -1 ||
+                 item.desc.toLowerCase().indexOf(query) !== -1 ||
+                 item.tag.toLowerCase().indexOf(query) !== -1;
+        });
+        return matchedItems.length > 0 ? { title: cat.title, items: matchedItems } : null;
+      }).filter(Boolean);
+
+      renderAll(filtered);
+    });
+
+    clearBtn.addEventListener('click', function() {
+      searchInput.value = '';
+      renderAll(categories);
+      searchInput.focus();
+    });
+
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        searchInput.value = '';
+        renderAll(categories);
+        searchInput.blur();
+      }
+    });
+  </script>
+</body>
+</html>

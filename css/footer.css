@@ -1,0 +1,41 @@
+/* ============================================================
+   footer.css - Footer 样式
+   ============================================================ */
+
+/* ---------- Footer (精确匹配原站) ---------- */
+.footer { 
+  background: #fff; 
+  margin: 0 auto; 
+  font-size: 14px; 
+}
+
+.footer-content { 
+  height: 120px; 
+  width: 1228px; 
+  max-width: 100%; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin: 0 auto; 
+  padding: 0 16px; 
+}
+
+.footer .left { 
+  display: flex; 
+  align-items: center; 
+}
+
+.footer img { 
+  width: 100px; 
+  vertical-align: middle; 
+  margin-bottom: 10px; 
+}
+
+.footer a { 
+  margin-left: 20px; 
+  cursor: pointer; 
+}
+
+.footer a:hover { 
+  color: #95b61c; 
+}

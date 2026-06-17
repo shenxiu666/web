@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+  <meta name="description" content="doyoudo 学习路径">
+  <title>学习路径 — doyoudo</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/paths.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-list">
+      <div class="logo">
+        <a href="index.html"><img src="assets/images/web-logo.png" alt="doyoudo"></a>
+        <span class="test">beta</span>
+      </div>
+      <li><a href="index.html">首页</a></li>
+        <li><a href="free-fonts.html">免费中文字体</a></li>
+        <li><a href="resources.html">资源导航</a></li>
+        <li><a href="learning-path.html" class="router-link-active">学习路径</a></li>
+    </div>
+  </nav>
+
+  <div class="home-content">
+    <div class="home">
+
+      <div style="text-align:center;padding:40px 0 20px;">
+        <h1 style="font-size:24px;font-weight:700;color:#2a301b;">学习路径</h1>
+        <p style="font-size:14px;color:#707070;margin-top:8px;">从零基础到精通，系统性的学习路线图帮你少走弯路</p>
+      </div>
+
+      <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:24px;">
+        <button class="filter-btn active" data-path-filter="all">全部路径</button>
+        <button class="filter-btn" data-path-filter="ps">Photoshop</button>
+        <button class="filter-btn" data-path-filter="ae">After Effects</button>
+        <button class="filter-btn" data-path-filter="pr">Premiere</button>
+        <button class="filter-btn" data-path-filter="c4d">Cinema 4D</button>
+        <button class="filter-btn" data-path-filter="ai">Illustrator</button>
+        <button class="filter-btn" data-path-filter="au">Audition</button>
+        <button class="filter-btn" data-path-filter="fl">FL Studio</button>
+        <button class="filter-btn" data-path-filter="fcp">Final Cut Pro</button>
+      </div>
+
+      <div class="path-cards" id="pathGridFull" style="margin-bottom:40px;"></div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="left">
+        <div>
+          <img src="assets/images/web-logo.png" alt="doyoudo">
+          <br>
+          <span style="font-size:12px;color:#acacac;">有趣、专业的设计软件在线学习平台</span>
+        </div>
+      </div>
+      <div class="right">
+        <a href="tutorials.html">全部教程</a>
+        <a href="learning-path.html">学习路径</a>
+        <a href="#">资源导航</a>
+        <a href="#">问答社区</a>
+        <a href="#">关于我们</a>
+        <a href="#">京ICP备15058894号-1</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/tutorials.js"></script>
+  <script src="js/detail.js"></script>
+  <script src="js/paths.js"></script>
+  <script src="js/home.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      initNav();
+      initFooter();
+      initSearch();
+      initFilters();
+      initDetail();
+      initPaths();
+      initHome();
+    });
+  </script>
+</body>
+</html>

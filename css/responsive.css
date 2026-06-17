@@ -1,0 +1,209 @@
+/* ============================================================
+   responsive.css - 响应式样式
+   ============================================================ */
+
+/* ---------- 响应式：平板 (471px-1024px) ---------- */
+@media screen and (min-width: 471px) and (max-width: 1024px) {
+  .nav-list { 
+    width: 100%; 
+    line-height: 40px; 
+    flex-wrap: wrap; 
+    padding-top: 15px; 
+    padding-left: 8px; 
+  }
+  
+  .logo img { 
+    width: 95px; 
+  }
+  
+  .nav-list li { 
+    margin: 0 15px; 
+  }
+  
+  .home { 
+    width: 95%; 
+  }
+  
+  .banner-area { 
+    flex-wrap: wrap; 
+  }
+  
+  .big-banner { 
+    width: 62%; 
+    height: 180px; 
+  }
+  
+  .small-banner { 
+    width: 32%; 
+    max-height: 180px; 
+  }
+  
+  .search-box { 
+    width: 60%; 
+  }
+  
+  .btn-all, 
+  .btn-buy { 
+    width: 15%; 
+    margin: 0 15px; 
+  }
+  
+  .cards { 
+    justify-content: space-between; 
+  }
+  
+  .card { 
+    flex-basis: 30%; 
+    width: auto; 
+  }
+  
+  .card .cover { 
+    height: 60%; 
+  }
+  
+  .cardInfo .cardTitle { 
+    font-size: 0.9em; 
+  }
+  
+  .cardInfo span { 
+    font-size: 0.7em; 
+  }
+  
+  .detail-layout { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .path-card-item { 
+    width: 100%; 
+  }
+  
+  .footer-content { 
+    height: 100px; 
+    width: 100%; 
+    padding: 20px 40px; 
+    font-size: 0.8em; 
+  }
+  
+  .footer a { 
+    display: inline-block; 
+    margin: 4px 15px; 
+  }
+  
+  .footer img { 
+    width: 80px; 
+    margin-bottom: 5px; 
+  }
+}
+
+/* ---------- 响应式：手机 (≤470px) ---------- */
+@media screen and (max-width: 470px) {
+  .home { 
+    width: 95%; 
+  }
+  
+  .nav-list { 
+    width: 100%; 
+    line-height: 40px; 
+    flex-wrap: wrap; 
+    padding-top: 10px; 
+    padding-left: 8px; 
+  }
+  
+  .nav { 
+    height: 100px; 
+  }
+  
+  .logo img { 
+    width: 90px; 
+  }
+  
+  .nav-list li { 
+    margin: 0 11px; 
+    align-items: center; 
+  }
+  
+  .banner-area { 
+    flex-wrap: wrap; 
+  }
+  
+  .big-banner { 
+    width: 100%; 
+    height: 160px; 
+    margin: 4px 8px; 
+  }
+  
+  .small-banner { 
+    width: 100%; 
+    max-height: 160px; 
+    margin: 4px 8px; 
+  }
+  
+  .searchPart { 
+    flex-wrap: wrap; 
+    margin-top: 10px; 
+  }
+  
+  .search-box { 
+    width: 100%; 
+    margin-bottom: 10px; 
+  }
+  
+  .btn-all, 
+  .btn-buy { 
+    margin: 10px 0; 
+    width: 100%; 
+  }
+  
+  .card { 
+    flex-basis: 100%; 
+  }
+  
+  .card .cover { 
+    height: 212px; 
+  }
+  
+  .cardInfo .cardTitle { 
+    font-size: 1.1em; 
+  }
+  
+  .detail-layout { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .path-card-item { 
+    width: 100%; 
+    flex-direction: column; 
+  }
+  
+  .footer { 
+    width: 100%; 
+  }
+  
+  .footer-content { 
+    height: auto; 
+    width: 100%; 
+    padding: 20px; 
+    font-size: 0.8em; 
+    flex-direction: column; 
+    gap: 16px; 
+  }
+  
+  .footer .left { 
+    margin-right: 30px; 
+  }
+  
+  .footer a { 
+    display: inline-block; 
+    margin: 8px 15px; 
+  }
+  
+  .footer img { 
+    width: 80px; 
+    margin-bottom: 5px; 
+  }
+}
+
+/* 辅助类 */
+.text-green { color: #80aa15; }
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }

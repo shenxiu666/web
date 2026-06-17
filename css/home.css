@@ -1,0 +1,254 @@
+/* ============================================================
+   home.css - 首页相关样式（Banner、搜索区、筛选区）
+   ============================================================ */
+
+/* ---------- Home 区域 ---------- */
+.home-content { 
+  background: rgba(245,246,249,0.9725490196078431); 
+}
+
+.home { 
+  width: 1240px; 
+  max-width: 100%; 
+  margin: 0 auto; 
+}
+
+/* ---------- Banner 区 ---------- */
+.banner-area { 
+  display: flex; 
+  justify-content: space-between; 
+}
+
+.big-banner { 
+  width: 792px; 
+  height: 297px; 
+  margin: 8px; 
+  background: #fff; 
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1); 
+  border-radius: 6px; 
+  overflow: hidden; 
+}
+
+.big-banner img { 
+  width: 100%; 
+  height: 100%; 
+  border-radius: 6px; 
+  object-fit: cover; 
+}
+
+.small-banner { 
+  width: 396px; 
+  max-height: 297px; 
+  margin: 8px; 
+  background: #fff; 
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1); 
+  border-radius: 6px; 
+  overflow: hidden; 
+}
+
+.small-banner img { 
+  width: 100%; 
+  height: 100%; 
+  border-radius: 6px; 
+  object-fit: cover; 
+}
+
+/* ---------- 搜索区 ---------- */
+.searchPart { 
+  display: flex; 
+  justify-content: center; 
+  margin: 40px 0; 
+  flex-wrap: wrap; 
+}
+
+.search-what { 
+  font-size: 14px; 
+  margin-right: 10px; 
+  padding: 6px; 
+  color: #80aa15; 
+  font-weight: 600; 
+  white-space: nowrap; 
+}
+
+.search-box { 
+  width: 40%; 
+  min-width: 250px; 
+  height: 50px; 
+  background: #fff; 
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.07); 
+  border-radius: 5px; 
+  position: relative; 
+}
+
+.search-box input { 
+  padding-left: 15px; 
+  padding-right: 100px; 
+  border-radius: 5px; 
+  height: 100%; 
+  width: 100%; 
+  font-size: 14px; 
+}
+
+.search-box input::placeholder { 
+  color: #acacac; 
+  font-weight: lighter; 
+}
+
+.search-box input:focus { 
+  border: 1px solid #e4e4e4; 
+}
+
+.search-box .cancelSearch { 
+  position: absolute; 
+  cursor: pointer; 
+  color: #545454; 
+  height: 50px; 
+  width: 60px; 
+  border: none; 
+  right: 0; 
+  top: 0; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 0 5px 5px 0; 
+  font-size: 1.5em; 
+}
+
+.search-box .cancelSearch:hover { 
+  background: #ebebeb; 
+}
+
+/* CTA 按钮 */
+.btn-all { 
+  border: none; 
+  cursor: pointer; 
+  border-radius: 5px; 
+  height: 50px; 
+  width: 150px; 
+  color: #fff; 
+  margin-left: 30px; 
+  font-size: 15px; 
+  background: #a2c217; 
+  transition: all 0.2s; 
+}
+
+.btn-all:hover { 
+  background: #94b113; 
+  box-shadow: 0 0 1px 0 rgba(0,0,0,0.09); 
+}
+
+.btn-buy { 
+  border: none; 
+  cursor: pointer; 
+  border-radius: 5px; 
+  height: 50px; 
+  width: 150px; 
+  color: #fff; 
+  margin-left: 30px; 
+  font-size: 15px; 
+  background: #eb5f35; 
+  transition: all 0.2s; 
+}
+
+.btn-buy:hover { 
+  background: #d85831; 
+}
+
+.btn-all a, 
+.btn-buy a { 
+  color: #fff; 
+}
+
+/* ---------- 筛选区 ---------- */
+.search-filters { 
+  padding: 0 8px; 
+}
+
+.search-software, 
+.search-level, 
+.search-author { 
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: flex-start; 
+  margin-bottom: 10px; 
+}
+
+.search-software p, 
+.search-level p, 
+.search-author p { 
+  font-size: 14px; 
+  margin-right: 10px; 
+  padding: 6px; 
+  color: #80aa15; 
+  font-weight: 600; 
+  min-width: 48px; 
+}
+
+.filter-buttons { 
+  display: flex; 
+  flex-wrap: wrap; 
+  flex: 1; 
+}
+
+.filter-btn { 
+  color: #707070; 
+  cursor: pointer; 
+  padding: 7px 12px; 
+  border-radius: 5px; 
+  border: 0; 
+  margin-right: 10px; 
+  margin-bottom: 15px; 
+  background: #fff; 
+  position: relative; 
+  font-size: 14px; 
+  transition: all 0.15s; 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 5px; 
+}
+
+.filter-btn img { 
+  width: 16px; 
+  vertical-align: text-bottom; 
+}
+
+.filter-btn:hover { 
+  color: #fff; 
+  background: #a2c217; 
+}
+
+.filter-btn.active { 
+  color: #fff; 
+  background: #a2c217; 
+}
+
+/* 搜索结果提示 */
+.found { 
+  font-size: 0.9em; 
+  text-align: center; 
+  margin: 20px auto; 
+  width: 100%; 
+  padding: 12px 0; 
+  color: #267429; 
+  background: #f5faf5; 
+  border: 1px solid #a9d3ab; 
+  border-radius: 5px; 
+}
+
+.found .keys { 
+  margin: 0 6px; 
+  font-weight: 700; 
+  color: #267429; 
+}
+
+.notFound { 
+  font-size: 0.9em; 
+  text-align: center; 
+  margin: 20px auto; 
+  width: 100%; 
+  padding: 12px 0; 
+  color: #42130f; 
+  background: #fff7fa; 
+  border: 1px solid #f9a9a2; 
+  border-radius: 5px; 
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+  <meta name="description" content="doyoudo 教程列表">
+  <title>全部教程 — doyoudo</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-list">
+      <div class="logo">
+        <a href="index.html"><img src="assets/images/web-logo.png" alt="doyoudo"></a>
+        <span class="test">beta</span>
+      </div>
+      <li><a href="index.html">首页</a></li>
+        <li><a href="free-fonts.html">免费中文字体</a></li>
+        <li><a href="resources.html">资源导航</a></li>
+        <li><a href="learning-path.html">学习路径</a></li>
+    </div>
+  </nav>
+
+  <div class="home-content">
+    <div class="home">
+
+      <div class="searchPart">
+        <span class="search-what">找什么教程？</span>
+        <div class="search-box">
+          <input type="text" placeholder="搜索课程、软件、作者...">
+          <button class="cancelSearch"><i class="ri-close-circle-line"></i></button>
+        </div>
+        <a href="tutorials.html"><button class="btn-all">全部课程</button></a>
+        <a href="tutorials.html?type=paid"><button class="btn-buy">付费课程</button></a>
+      </div>
+
+      <div class="search-filters">
+        <div class="search-software">
+          <p>软件</p>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-fgroup="software" data-fvalue="all">全部</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="ps">PS</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="ae">AE</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="pr">PR</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="c4d">C4D</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="ai">AI</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="au">AU</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="fl">FL</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="lr">LR</button>
+            <button class="filter-btn" data-fgroup="software" data-fvalue="fcp">FCP</button>
+          </div>
+        </div>
+        <div class="search-level">
+          <p>难度</p>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-fgroup="difficulty" data-fvalue="all">全部</button>
+            <button class="filter-btn" data-fgroup="difficulty" data-fvalue="beginner">初级</button>
+            <button class="filter-btn" data-fgroup="difficulty" data-fvalue="intermediate">中级</button>
+            <button class="filter-btn" data-fgroup="difficulty" data-fvalue="advanced">高级</button>
+          </div>
+        </div>
+        <div class="search-author" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;">
+            <p>类型</p>
+            <div class="filter-buttons">
+              <button class="filter-btn active" data-fgroup="type" data-fvalue="all">全部</button>
+              <button class="filter-btn" data-fgroup="type" data-fvalue="free">免费</button>
+              <button class="filter-btn" data-fgroup="type" data-fvalue="paid">付费</button>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font-size:14px;color:#80aa15;font-weight:600;">排序</span>
+            <select id="sortSelect" style="padding:7px 12px;border:1px solid #e4e4e4;border-radius:5px;font-size:14px;color:#707070;background:#fff;cursor:pointer;">
+              <option value="newest">最新发布</option>
+              <option value="popular">最多观看</option>
+              <option value="recommended">推荐排序</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <p id="resultsCount" style="font-size:14px;color:#707070;padding:8px;margin-top:10px;">共找到 16 个课程</p>
+      <div class="cards"></div>
+      <div id="pagination" style="display:flex;justify-content:center;gap:8px;padding:20px 0 50px;"></div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="left">
+        <div>
+          <img src="assets/images/web-logo.png" alt="doyoudo">
+          <br>
+          <span style="font-size:12px;color:#acacac;">有趣、专业的设计软件在线学习平台</span>
+        </div>
+      </div>
+      <div class="right">
+        <a href="tutorials.html">全部教程</a>
+        <a href="learning-path.html">学习路径</a>
+        <a href="#">资源导航</a>
+        <a href="#">问答社区</a>
+        <a href="#">关于我们</a>
+        <a href="#">京ICP备15058894号-1</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/tutorials.js"></script>
+  <script src="js/detail.js"></script>
+  <script src="js/paths.js"></script>
+  <script src="js/home.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      initNav();
+      initFooter();
+      initSearch();
+      initFilters();
+      initDetail();
+      initPaths();
+      initHome();
+    });
+  </script>
+</body>
+</html>

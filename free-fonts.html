@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+  <meta name="description" content="doyoudo 免费可商用中文字体下载">
+  <title>免费中文字体 — doyoudo</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .font-card { background: #fff; border-radius: 6px; padding: 24px; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.01), 0 4px 8px 0 rgba(0,0,0,0.05); transition: all 0.3s; cursor: pointer; width: 294px; margin: 10px 8px; }
+    .font-card:hover { box-shadow: 0 15px 50px 0 rgba(0,0,0,0.09), 0 15px 59px 0 rgba(0,0,0,0.09); transform: translateY(-2px); }
+    .font-preview { background: #f9fafb; border: 1px dashed #e4e4e4; border-radius: 4px; padding: 20px 16px; font-size: 28px; text-align: center; margin-bottom: 16px; min-height: 80px; display: flex; align-items: center; justify-content: center; word-break: break-all; }
+    .font-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+    .font-tag { padding: 2px 8px; font-size: 11px; border-radius: 3px; background: #efeff0; color: #707070; }
+    .font-tag.free { background: #f5faf5; color: #80aa15; font-weight: 600; }
+    .font-tag.source { background: #f0f4ff; color: #477fe9; }
+    @media (max-width: 470px) {
+      .font-card { width: 100%; margin: 10px 0; }
+      .font-preview { font-size: 22px; padding: 16px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-list">
+      <div class="logo">
+        <a href="index.html"><img src="assets/images/web-logo.png" alt="doyoudo"></a>
+        <span class="test">beta</span>
+      </div>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="free-fonts.html" class="router-link-active">免费中文字体</a></li>
+      <li><a href="resources.html">资源导航</a></li>
+      <li><a href="learning-path.html">学习路径</a></li>
+    </div>
+  </nav>
+
+  <div class="home-content">
+    <div class="home" style="padding:40px 0 60px;">
+
+      <div style="text-align:center;padding:20px 0 10px;">
+        <h1 style="font-size:24px;font-weight:700;color:#2a301b;">免费中文字体</h1>
+        <p style="font-size:14px;color:#707070;margin-top:8px;">精选免费可商用中文字体，设计师必备资源</p>
+      </div>
+
+      <!-- 分类筛选 -->
+      <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:20px 0 24px;">
+        <button class="filter-btn active" data-font-filter="all">全部字体</button>
+        <button class="filter-btn" data-font-filter="sans-serif">无衬线体</button>
+        <button class="filter-btn" data-font-filter="serif">衬线体</button>
+        <button class="filter-btn" data-font-filter="display">展示/标题体</button>
+        <button class="filter-btn" data-font-filter="handwriting">手写/书法体</button>
+      </div>
+
+      <p id="fontCount" style="text-align:center;font-size:13px;color:#acacac;margin-bottom:10px;"></p>
+
+      <div class="cards" id="fontGrid" style="margin-bottom:40px;"></div>
+
+      <p class="noMore">— 持续更新中，<a href="resources.html" style="color:#80aa15;">查看更多资源 →</a> —</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="left">
+        <div>
+          <img src="assets/images/web-logo.png" alt="doyoudo">
+          <br>
+          <span style="font-size:12px;color:#acacac;">有趣、专业的设计软件在线学习平台</span>
+        </div>
+      </div>
+      <div class="right">
+        <a href="tutorials.html">全部教程</a>
+        <a href="learning-path.html">学习路径</a>
+        <a href="free-fonts.html">免费中文字体</a>
+        <a href="resources.html">资源导航</a>
+        <a href="#">关于我们</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var fonts = [
+      { name:'思源黑体', en:'Source Han Sans', preview:'你好，设计让世界更美好', category:'sans-serif', tag:'黑体', free:true, source:'Adobe & Google', desc:'Adobe与Google联合开发的开源泛中日韩黑体，7种字重，现代设计首选' },
+      { name:'思源宋体', en:'Source Han Serif', preview:'你好，设计让世界更美好', category:'serif', tag:'宋体', free:true, source:'Adobe & Google', desc:'开源宋体字族，适合正文排版与印刷设计，优雅端庄' },
+      { name:'阿里巴巴普惠体', en:'Alibaba PuHuiTi', preview:'你好，设计让世界更美好', category:'sans-serif', tag:'黑体', free:true, source:'阿里巴巴', desc:'覆盖173语种的免费商用字体，电商设计标配' },
+      { name:'OPPO Sans', en:'OPPO Sans', preview:'你好，设计让世界更美好', category:'sans-serif', tag:'黑体', free:true, source:'OPPO', desc:'OPPO品牌定制字体，免费授权商用，现代简约风格' },
+      { name:'Mi Sans', en:'Mi Sans', preview:'你好，设计让世界更美好', category:'sans-serif', tag:'黑体', free:true, source:'小米', desc:'小米MIUI系统字体，笔画简洁，屏显阅读舒适' },
+      { name:'霞鹜文楷', en:'LXGW WenKai', preview:'你好，设计让世界更美好', category:'serif', tag:'楷体', free:true, source:'开源社区', desc:'基于Klee One改造的开源楷体，文艺清新，适合书籍杂志排版' },
+      { name:'霞鹜新致宋', en:'LXGW Neo ZhiSong', preview:'你好，设计让世界更美好', category:'serif', tag:'宋体', free:true, source:'开源社区', desc:'霞鹜系列新作，融合旧字形风格的宋体，复古典雅' },
+      { name:'站酷高端黑', en:'ZCOOL GaoDuanHei', preview:'你好，设计让世界更美好', category:'display', tag:'标题黑体', free:true, source:'站酷', desc:'笔画粗壮有力的高端标题黑体，适合海报、Banner设计' },
+      { name:'站酷文艺体', en:'ZCOOL WenYiTi', preview:'你好，设计让世界更美好', category:'display', tag:'展示体', free:true, source:'站酷', desc:'站酷出品的文艺风格标题字体，独特有个性' },
+      { name:'站酷快乐体', en:'ZCOOL KuaiLeTi', preview:'你好，设计让世界更美好', category:'handwriting', tag:'手写体', free:true, source:'站酷', desc:'活泼可爱的手写风格字体，适合儿童、轻松场景' },
+      { name:'庞门正道标题体', en:'PangMen ZhengDao', preview:'你好，设计让世界更美好', category:'display', tag:'标题体', free:true, source:'庞门正道', desc:'力量感十足的免费标题字体，电商促销海报利器' },
+      { name:'优设标题黑', en:'UISDC Title Black', preview:'你好，设计让世界更美好', category:'display', tag:'标题黑体', free:true, source:'优设网', desc:'优设网出品，粗壮醒目，专为标题而生' },
+      { name:'胡晓波骚包体', en:'HuXiaoBo SaoBao', preview:'你好，设计让世界更美好', category:'handwriting', tag:'手写体', free:true, source:'胡晓波', desc:'潇洒随性的手写风格，富有艺术感染力' },
+      { name:'胡晓波男神体', en:'HuXiaoBo NanShen', preview:'你好，设计让世界更美好', category:'handwriting', tag:'手写体', free:true, source:'胡晓波', desc:'硬朗有型的男性风格手写字体' },
+      { name:'沐瑶软笔手写体', en:'MuYao Soft Pen', preview:'你好，设计让世界更美好', category:'handwriting', tag:'软笔手写', free:true, source:'沐瑶', desc:'柔和自然的软笔手写风格，适合情感表达' },
+      { name:'杨任东竹石体', en:'ZhuShiTi', preview:'你好，设计让世界更美好', category:'handwriting', tag:'书法体', free:true, source:'杨任东', desc:'免费商用书法字体，刚柔并济，独具风骨' },
+    ];
+
+    var currentFilter = 'all';
+    var grid = document.getElementById('fontGrid');
+    var countEl = document.getElementById('fontCount');
+
+    function renderFonts(filter) {
+      var filtered = filter === 'all' ? fonts : fonts.filter(function(f) { return f.category === filter; });
+      countEl.textContent = '共 ' + filtered.length + ' 款字体';
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div class="notFound" style="width:100%;">暂无该分类的字体，请查看其他分类</div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(function(f) {
+        return '<div class="font-card">' +
+          '<div class="font-preview" style="font-weight:700;">' + f.preview + '</div>' +
+          '<h3 style="font-size:16px;font-weight:600;color:#2a301b;">' + f.name +
+            ' <span style="font-weight:400;font-size:13px;color:#acacac;">' + f.en + '</span></h3>' +
+          '<p style="font-size:13px;color:#707070;margin-top:6px;line-height:1.5;">' + f.desc + '</p>' +
+          '<div class="font-meta">' +
+            '<span class="font-tag">' + f.tag + '</span>' +
+            '<span class="font-tag source">' + f.source + '</span>' +
+            '<span class="font-tag free">免费可商用</span>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    renderFonts('all');
+
+    // 筛选按钮交互
+    document.querySelectorAll('.filter-btn[data-font-filter]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn[data-font-filter]').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        currentFilter = btn.dataset.fontFilter;
+        renderFonts(currentFilter);
+      });
+    });
+  </script>
+</body>
+</html>

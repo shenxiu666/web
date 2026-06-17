@@ -1,0 +1,72 @@
+/* ============================================================
+   paths.css - 学习路径页样式
+   ============================================================ */
+
+/* ---------- 学习路径卡片 ---------- */
+.path-cards { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 16px; 
+  padding: 20px 8px; 
+}
+
+.path-card-item { 
+  width: calc(50% - 8px); 
+  background: #fff; 
+  border-radius: 6px; 
+  padding: 24px; 
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.01), 0 4px 8px 0 rgba(0,0,0,0.05); 
+  cursor: pointer; 
+  transition: all 0.3s; 
+  display: flex; 
+  gap: 16px; 
+}
+
+.path-card-item:hover { 
+  box-shadow: 0 15px 50px 0 rgba(0,0,0,0.09), 0 15px 59px 0 rgba(0,0,0,0.09); 
+}
+
+.path-card-icon { 
+  width: 56px; 
+  height: 56px; 
+  border-radius: 8px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 18px; 
+  font-weight: 700; 
+  color: #fff; 
+  flex-shrink: 0; 
+}
+
+.path-stages { 
+  display: flex; 
+  align-items: center; 
+  gap: 4px; 
+  flex-wrap: wrap; 
+  margin-top: 8px; 
+}
+
+.path-stage-tag { 
+  padding: 3px 10px; 
+  font-size: 12px; 
+  background: #efeff0; 
+  color: #707070; 
+  border-radius: 3px; 
+}
+
+.path-stage-arrow { 
+  color: #ccc; 
+  font-size: 10px; 
+}
+
+/* 软件图标背景色 */
+.sw-ps { background: #001E36; }
+.sw-ae { background: #2A0034; }
+.sw-pr { background: #2B0549; }
+.sw-c4d { background: #00254D; }
+.sw-ai { background: #330E00; }
+.sw-au { background: #00331A; }
+.sw-fl { background: #331400; }
+.sw-lr { background: #1A1A2E; }
+.sw-fcp { background: #1A0033; }
