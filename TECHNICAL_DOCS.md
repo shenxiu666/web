@@ -31,7 +31,7 @@
 │   ├── responsive.css          # 响应式适配样式 (3KB)
 │   └── style.css               # 旧版合并文件 (保留兼容)
 │
-├── js/                         # JavaScript 模块目录 (8 个 JS 文件)
+├── js/                         # JavaScript 模块目录 (10 个 JS 文件)
 │   ├── data.js                 # 共享数据层 (课程/路径/软件列表)
 │   ├── utils.js                # 通用工具函数 (数据访问/URL 生成)
 │   ├── components.js           # UI 组件 (课程卡片 HTML 生成器)
@@ -40,6 +40,8 @@
 │   ├── tutorials.js            # 教程列表页逻辑 (筛选/搜索/分页)
 │   ├── detail.js               # 课程详情页逻辑 (Tab 切换/章节渲染)
 │   ├── paths.js                # 学习路径页逻辑 (路径卡片渲染)
+│   ├── tab-switch.js           # Tab 栏切换特效 (自动切换/鼠标交互)
+│   ├── carousel.js             # 轮播图特效 (焦点轮播/自动播放)
 │   └── main.js                 # 旧版主入口文件 (保留兼容)
 │
 ├── assets/                     # 静态资源目录
@@ -388,6 +390,66 @@ function updateURL() {
 
 ---
 
+## 🎨 特效模块说明
+
+### Tab 栏切换 (`js/tab-switch.js`)
+
+**功能特性**:
+- 自动轮播切换 (5 秒间隔)
+- 鼠标悬停暂停自动切换
+- 鼠标移出恢复自动切换
+- 点击/悬停高亮当前 Tab
+- 内容区域联动显示
+
+**依赖 HTML 结构**:
+```html
+<div id="tab-head">
+  <div>Tab 1</div>
+  <div>Tab 2</div>
+  ...
+</div>
+<div id="tab-body">
+  <ul>内容 1</ul>
+  <ul>内容 2</ul>
+  ...
+</div>
+```
+
+**使用方式**:
+```html
+<script src="js/tab-switch.js"></script>
+```
+
+### 轮播图 (`js/carousel.js`)
+
+**功能特性**:
+- 自动播放 (5 秒间隔)
+- 鼠标悬停按钮暂停播放
+- 鼠标移出恢复播放
+- 焦点按钮指示器
+- 循环切换效果
+
+**依赖 HTML 结构**:
+```html
+<div id="banner_pic">
+  <div class="pic">图片 1</div>
+  <div class="pic">图片 2</div>
+  ...
+</div>
+<ul id="button">
+  <li class="but">按钮 1</li>
+  <li class="but">按钮 2</li>
+  ...
+</ul>
+```
+
+**使用方式**:
+```html
+<script src="js/carousel.js"></script>
+```
+
+---
+
 ## 🚀 快速启动
 
 ```bash
@@ -411,7 +473,7 @@ npx serve /workspace
 |------|--------|--------|------|
 | HTML | 6 个 | ~45KB | 4 个主页面 + 2 个附加页面 |
 | CSS | 8 个 | ~17KB | 模块化样式 (不含旧版 style.css) |
-| JS | 8 个 | ~28KB | 分层架构 (不含旧版 main.js) |
+| JS | 10 个 | ~32KB | 分层架构 (含 tab-switch.js/carousel.js 特效) |
 | 图片 | 若干 | ~2MB | Logo/Banner/课程封面 |
 
 ---
@@ -435,6 +497,7 @@ npx serve /workspace
 - **v2.0**: CSS 模块化拆分 (8 个文件)
 - **v3.0**: JS 分层架构拆分 (8 个文件)
 - **v3.1**: 修复搜索功能，支持关键词搜索和 URL 同步
+- **v3.2**: 新增特效模块：Tab 栏切换 (tab-switch.js) 和轮播图 (carousel.js)
 
 ---
 
